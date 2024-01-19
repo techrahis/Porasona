@@ -9,7 +9,5 @@ jobs:
     steps:
       - name: auto-merge
         uses: pascalgn/automerge-action@v0.14.3
-        with:
-          MERGE_LABELS: "auto-merge"
         env:
           GITHUB_TOKEN: "${{ secrets.WORKFLOW_TOKEN }}"
