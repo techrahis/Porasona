@@ -2,6 +2,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { BsBook } from "react-icons/bs";
 import { LuCalendarPlus } from "react-icons/lu";
 import { TbUserStar } from "react-icons/tb";
+import { FaRegCircleUser } from "react-icons/fa6";
 export const sidebarItems = [
     {
         id:1,
@@ -26,5 +27,11 @@ export const sidebarItems = [
         name:"Reviews",
         path:"/reviews",
         icon:TbUserStar
+    },
+    {
+        id:5,
+        name:"Profile",
+        path:"/profile",
+        icon:FaRegCircleUser
     }
 ]

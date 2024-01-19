@@ -16,16 +16,13 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { setUser } from "@/redux/Slice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loginSchema = yup.object().shape({
     email: yup.string().email().required("Please provide email"),
-    password: yup
-      .string()
-      .min(8)
-      .required("PLease provie password")
+    password: yup.string().min(8).required("PLease provie password"),
   });
 
   const form = useForm({
@@ -36,12 +33,12 @@ const Login = () => {
     },
   });
   const handleSubmit = (values) => {
-    localStorage.setItem("userData" , JSON.stringify(values));
+    localStorage.setItem("userData", JSON.stringify(values));
     dispatch(setUser(values));
-    navigate("/")
+    navigate("/");
   };
   return (
-    <div className="h-screen flex justify-center items-center flex-col bg-white">
+    <div className="h-screen flex justify-center items-center flex-col bg-white dark:bg-black">
       <Logo />
       <h1 className="text-xl mb-3">Login</h1>
       <div className="border border-gray-500 p-4 w-[30%] md:w-[50%] sm:w-[90%] h-fit">
@@ -79,12 +76,19 @@ const Login = () => {
             />
 
             <div className="flex justify-center items-center">
-              <Button type="submit">
-                Login
-              </Button>
+              <Button type="submit">Login</Button>
             </div>
           </form>
         </Form>
+        <div className="mt-4 flex justify-center text-sm items-center gap-x-2">
+          <p>Don't have an account ? </p>
+          <Link
+            to="/signup"
+            className="text-base text-blue-600 font-semibold underline"
+          >
+            Signup
+          </Link>
+        </div>
       </div>
     </div>
   );

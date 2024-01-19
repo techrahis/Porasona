@@ -5,7 +5,8 @@ import { Button } from "../ui/button";
 import ThemeSwithcer from "../Theme/ThemeSwithcer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toogleSidebar } from "@/redux/Slice";
+import { toogleSidebar, logout } from "@/redux/Slice";
+
 import Logo from "./Logo";
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Sidebar = () => {
     <aside>
       <nav
         className={`flex flex-col gap-y-[5rem] h-screen bg-white dark:bg-black z-[100] relative
-    dark:text-white shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.1)] w-[200px] md:absolute md:w-[250px] ${
+    dark:text-white shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.2)] w-[200px] md:absolute md:w-[250px] ${
       showSidebar
         ? "md:left-0 transition-all ease-linear duration-300"
         : "md:left-[-110%]  transition-all ease-linear duration-300"
@@ -43,15 +44,15 @@ const Sidebar = () => {
              hover:bg-blue-50 hover:dark:bg-gray-100  hover:border-r-[.4rem] hover:dark:text-black
              hover:dark:border-gray-500
               hover:border-blue-600
-             p-3  transition-all ease-linear duration-300 cursor-pointer`}
+             p-3 px-6  transition-all ease-linear duration-300 cursor-pointer`}
               onClick={() => {
                 navigate(item.path);
                 dispatch(toogleSidebar(false));
               }}
             >
               <div className="flex items-center gap-x-4">
-                <h2 className="text-2xl text-gray-500">{<item.icon />}</h2>
-                <h2 className="text-base font-semibold">{item.name}</h2>
+                <h2 className="text-xl text-gray-500">{<item.icon />}</h2>
+                <h2 className="text-sm font-semibold">{item.name}</h2>
               </div>
             </li>
           ))}
@@ -62,7 +63,7 @@ const Sidebar = () => {
         border-gray-300 dark:border-gray-500"
         >
           <div className="flex items-center px-4 justify-between">
-            <div>
+            <div onClick={()=>dispatch(logout())}>
               <Button variant="logout">Logout</Button>
             </div>
             <div className="w-fit">
