@@ -24,7 +24,7 @@ jobs:
       - name: Check author
         id: check_author
         run: |
-          ALLOWED_AUTHORS="rajarshisamaddar soumayadipsaha Soumelee prateekpranveer"
+          ALLOWED_AUTHORS="rajarshisamaddar soumayadipsaha soumayadip2002 Soumelee prateekpranveer"
           PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           if [[ $ALLOWED_AUTHORS != *"$PR_AUTHOR"* ]]; then
             echo "Author '$PR_AUTHOR' is not allowed to auto-merge"
