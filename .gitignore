@@ -1,0 +1,12 @@
+yarn-debug.log*
+yarn-error.log*
+package-lock.*
+yarn.lock
+
+node_modules
+dist
+*.local
+*.env
+
+# Editor directories and files
+.vscode

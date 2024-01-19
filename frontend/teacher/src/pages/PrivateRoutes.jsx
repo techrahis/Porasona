@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const PrivateRoutes = () => {
   const user = useSelector((state) => state.teacher.user);
   console.log(user);
-  console.log("hello")
+  console.log("hello");
   return user ? <Outlet /> : <Navigate to="/login" />;
 };
 

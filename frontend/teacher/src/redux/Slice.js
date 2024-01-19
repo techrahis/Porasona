@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   open: false,
-  user:null,
+  user: null,
 };
 
 export const teacherSlice = createSlice({
@@ -13,9 +13,9 @@ export const teacherSlice = createSlice({
       state.open = action.payload;
     },
 
-    setUser: (state, action)=>{
-      state.user=action.payload;
-    }
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
   },
 });
 

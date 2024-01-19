@@ -1,5 +1,5 @@
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
+import React from "react";
+import { Helmet } from "react-helmet-async";
 const Reviews = () => {
   return (
     <div>
@@ -8,7 +8,7 @@ const Reviews = () => {
       </Helmet>
       reviews
     </div>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;

@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { toogleSidebar } from "@/redux/Slice";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import Image from '@/assets/avatar.jpg'
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
+import Image from "@/assets/avatar.jpg";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const Header = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <div
       className="md:bg-white md:dark:bg-black md:fixed md:top-0 md:left-0 md:right-0 md:w-full justify-between 
@@ -33,22 +33,27 @@ const Header = () => {
           <p className="sm:hidden">New Course</p> <PlusCircle />
         </Button>
         <div className="relative h-fit p-1">
-            <p className="absolute top-[-.5rem] right-[-.2rem] bg-red-500 text-sm py-0 px-[.4rem] rounded-full
-            flex justify-center items-center">2</p>
-            <IoIosNotificationsOutline className="text-3xl "/>
+          <p
+            className="absolute top-[-.5rem] right-[-.2rem] bg-red-500 text-sm py-0 px-[.4rem] rounded-full
+            flex justify-center items-center"
+          >
+            2
+          </p>
+          <IoIosNotificationsOutline className="text-3xl " />
         </div>
         <div className="flex group items-center gap-x-4 relative cursor-pointer">
-            <Avatar>
-                <AvatarImage src={Image}></AvatarImage>
-                <AvatarFallback>TI</AvatarFallback>
-            </Avatar>
-            <div className="space-y-1 md:absolute md:top-[155%] md:hidden md:group-hover:block transition-all ease-linear duration-300
-            md:bg-white md:dark:bg-black md:right-0 md:p-4 w-[150px]">
-                <h1 className="text-base">Soumayadip Saha</h1>
-                <p className="text-sm text-gray-400">Web Developer</p>
-            </div>
+          <Avatar>
+            <AvatarImage src={Image}></AvatarImage>
+            <AvatarFallback>TI</AvatarFallback>
+          </Avatar>
+          <div
+            className="space-y-1 md:absolute md:top-[155%] md:hidden md:group-hover:block transition-all ease-linear duration-300
+            md:bg-white md:dark:bg-black md:right-0 md:p-4 w-[150px]"
+          >
+            <h1 className="text-base">Soumayadip Saha</h1>
+            <p className="text-sm text-gray-400">Web Developer</p>
+          </div>
         </div>
-       
       </div>
     </div>
   );
