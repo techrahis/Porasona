@@ -1,3 +1,3 @@
 # Porasona
 
-test auto merge PR 1
+test auto merge PR 2
