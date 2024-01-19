@@ -6,7 +6,7 @@ const Profile = () => {
       <Helmet>
         <title>Profile</title>
       </Helmet>
-      courses
+      Profile
     </div>
   );
 };
