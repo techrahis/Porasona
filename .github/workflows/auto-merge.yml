@@ -1,15 +1,15 @@
-name: automerge
+name: auto-merge
 
 on:
   pull_request_target:
 
 jobs:
-  automerge:
+  auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
+      - name: auto-merge
         uses: pascalgn/automerge-action@v0.14.3
         with:
-          MERGE_METHOD: "merge"
+          MERGE_LABELS: "auto-merge"
         env:
           GITHUB_TOKEN: "${{ secrets.WORKFLOW_TOKEN }}"
