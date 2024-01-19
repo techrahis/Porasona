@@ -34,18 +34,16 @@ const ThemeSwithcer = () => {
   return (
     <div
       onClick={handleTheme}
-      className={`flex py-2 px-1 cursor-pointer ${
-        theme === "dark" ? "bg-gray-400" : "bg-blue-100 "
-      }
+      className={`flex py-2 px-1 cursor-pointer 
       h-[1.8rem] w-[3.5rem] text-2xl items-center overflow-hidden rounded-[10rem]
       transition-all ease-linear duration-300`}
     >
       {theme === "dark" ? (
-        <div className="w-full flex justify-start text-indigo-600">
+        <div className="w-full flex justify-center text-indigo-600">
           <RiMoonFill />
         </div>
       ) : (
-        <div className="w-full flex justify-end text-yellow-500">
+        <div className="w-full flex justify-center text-yellow-500">
           <MdSunny />
         </div>
       )}
