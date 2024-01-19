@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: auto-merge
-        uses: pascalgn/automerge-action@v0.14.3
+        uses: pascalgn/automerge-action@v0.15.0
         env:
           GITHUB_TOKEN: "${{ secrets.WORKFLOW_TOKEN }}"
