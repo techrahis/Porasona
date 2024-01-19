@@ -18,6 +18,7 @@ function App() {
       if (userData) {
         const data = JSON.parse(userData);
         dispatch(setUser(data));
+        console.log("hello")
       }
     };
     getuserData();
