@@ -5,7 +5,7 @@ import { FaRupeeSign } from "react-icons/fa";
 
 const TotalEarnings = (props) => {
   return (
-    <div className='shadow-lg shadow-indigo-500/20 px-6 py-4 rounded-lg w-max'>
+    <div className='shadow-lg shadow-indigo-500/20 px-6 py-4 rounded-lg w-max bg-white dark:bg-black'>
             <div>
                 <h3 className=' font-bold'>Your Total Earnings</h3>
                 {/* dropdown */}
@@ -25,7 +25,7 @@ const TotalEarnings = (props) => {
                     Available <br />
                     <span className='font-semibold'>${props.available}</span>
                 </span>                
-                <Button variant="add">
+                <Button variant="teacher">
                 <FaRupeeSign /><p className="sm:hidden">Withdraw</p>
                 </Button>
             </div>
