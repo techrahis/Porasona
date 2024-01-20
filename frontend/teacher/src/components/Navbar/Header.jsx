@@ -44,7 +44,7 @@ const Header = () => {
         <div className="flex group items-center gap-x-4 relative cursor-pointer">
           <Avatar>
             <AvatarImage src={Image}></AvatarImage>
-            <AvatarFallback>TI</AvatarFallback>
+            <AvatarFallback className="dark:bg-gray-600 bg-gray-300 font-semibold">SS</AvatarFallback>
           </Avatar>
           <div
             className="space-y-1 md:absolute md:top-[155%] md:hidden md:group-hover:block transition-all ease-linear duration-300
