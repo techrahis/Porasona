@@ -7,20 +7,9 @@ import PrivateRoutes from "./components/Layout/PrivateRoutes";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Layout from "./components/Layout/Layout";
-import { useDispatch } from "react-redux";
-import { setUser } from "./redux/Slice";
-import { useEffect } from "react";
 import Profile from "./pages/Profile";
 
 function App() {
-  const dispatch = useDispatch();
-  const userData = localStorage.getItem("userData");
-  useEffect(() => {
-    if (userData) {
-      dispatch(setUser(JSON.parse(userData)));
-    }
-  }, [userData && userData]);
-
   return (
     <>
       <Routes>

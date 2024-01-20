@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   open: false,
+  isAuthenticated:localStorage.getItem('isAuthenticated')==='true',
   user: null,
 };
 
@@ -13,14 +14,16 @@ export const teacherSlice = createSlice({
       state.open = action.payload;
     },
 
-    setUser: (state, action) => {
-      state.user = action.payload;
+    setIsAuthenticated: (state, action) => {
+      localStorage.setItem('isAuthenticated', true);
+      state.isAuthenticated = true;
     },
     logout: (state, action) => {
-      state.user = null;
+      localStorage.removeItem('isAuthenticated')
+      state.isAuthenticated = false;
     },
   },
 });
 
-export const { toogleSidebar, setUser, logout } = teacherSlice.actions;
+export const { toogleSidebar, setIsAuthenticated, logout } = teacherSlice.actions;
 export default teacherSlice.reducer;

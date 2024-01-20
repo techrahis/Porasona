@@ -14,7 +14,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { setUser } from "@/redux/Slice";
+import { setIsAuthenticated } from "@/redux/Slice";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 const Login = () => {
@@ -32,9 +32,8 @@ const Login = () => {
       password: "",
     },
   });
-  const handleSubmit = (values) => {
-    localStorage.setItem("userData", JSON.stringify(values));
-    dispatch(setUser(values));
+  const handleSubmit = () => {
+    dispatch(setIsAuthenticated());
     navigate("/");
   };
   return (
