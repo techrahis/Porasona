@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { MdSunny } from "react-icons/md";
 import { RiMoonFill } from "react-icons/ri";
+import { toogleTheme } from "@/redux/Slice";
+import { useDispatch, useSelector } from "react-redux";
 const ThemeSwithcer = () => {
-  const [theme, setTheme] = useState(null);
+  const theme = useSelector((state)=>state.teacher.theme);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const getTheme = localStorage.getItem("theme");
-    if (getTheme) {
-      setTheme(getTheme);
-    } else {
-      setTheme(
+    if(!theme) {
+      dispatch(toogleTheme(
         window.matchMedia("(prefers-color-schema:dark)").matches
           ? "dark"
           : "light"
-      );
+      ));
     }
   }, []);
 
@@ -27,8 +27,7 @@ const ThemeSwithcer = () => {
 
   const handleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    dispatch(toogleTheme(newTheme));
   };
 
   return (

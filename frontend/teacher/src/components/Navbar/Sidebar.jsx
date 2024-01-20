@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <aside>
       <nav
-        className={`flex flex-col gap-y-[5rem] h-screen bg-white dark:bg-black z-[100] relative
+        className={`flex flex-col gap-y-[2rem] h-screen bg-white dark:bg-black z-[100] relative
     dark:text-white shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.2)] w-[200px] md:absolute md:w-[250px] ${
       showSidebar
         ? "md:left-0 transition-all ease-linear duration-300"
