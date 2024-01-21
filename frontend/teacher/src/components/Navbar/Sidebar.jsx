@@ -1,5 +1,5 @@
 import React from "react";
-import { sidebarItems } from "./SidebarItems";
+import { sidebarItems } from "../../data/SidebarItems";
 import { RxCross2 } from "react-icons/rx";
 import { Button } from "../ui/button";
 import ThemeSwithcer from "../Theme/ThemeSwithcer";
@@ -16,7 +16,7 @@ const Sidebar = () => {
     <aside>
       <nav
         className={`flex flex-col gap-y-[2rem] h-screen bg-white dark:bg-black z-[100] relative
-    dark:text-white shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.2)] w-[200px] md:absolute md:w-[250px] ${
+    dark:text-white shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.2)] w-[190px] md:absolute md:w-[250px] ${
       showSidebar
         ? "md:left-0 transition-all ease-linear duration-300"
         : "md:left-[-110%]  transition-all ease-linear duration-300"
