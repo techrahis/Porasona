@@ -11,7 +11,7 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <div
-      className="md:bg-white md:dark:bg-black md:fixed md:top-0 md:left-0 md:right-0 md:w-full justify-between 
+      className="md:bg-white md:dark:bg-black md:fixed md:top-0 md:left-0 md:right-0 md:w-full justify-between z-[10]
     flex items-center p-3 md:shadow-[0_.5rem_1.5rem_rgba(0,0,0,0.1)]"
     >
       <div className="md:hidden">

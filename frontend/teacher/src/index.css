@@ -76,5 +76,16 @@
   }
   body {
     @apply bg-background text-foreground;
+
+  }
+
+  ::-webkit-scrollbar{
+    background: #444;
+    width: .4rem;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: rgb(74, 74, 211);
+    border-radius: 5rem;
   }
 }

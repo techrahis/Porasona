@@ -44,9 +44,9 @@ const TotalEarnings = (props) => {
     const [value, setValue] = React.useState("");
 
     return (
-        <div className='shadow-lg shadow-indigo-500/20 px-6 py-4 rounded-lg w-max bg-white dark:bg-black'>
-            <div className='flex items-center gap-4'>
-                <h3 className=' font-bold'>Your Total Earnings</h3>
+        <div className='shadow-lg shadow-indigo-500/20 p-4 rounded-md w-full bg-white dark:bg-black'>
+            <div className='flex items-center justify-between gap-x-8'>
+                <h3 className='text-base font-bold'>Your Total Earnings</h3>
                 {/* dropdown */}
                 <Popover open={open} onOpenChange={setOpen}>
                     <PopoverTrigger asChild>
@@ -54,7 +54,7 @@ const TotalEarnings = (props) => {
                             variant="outline"
                             role="combobox"
                             aria-expanded={open}
-                            className="w-[200px] justify-between"
+                            className="w-[150px] justify-between"
                         >
                             {value
                                 ? courses.find((course) => course.value === value)?.label
@@ -62,7 +62,7 @@ const TotalEarnings = (props) => {
                             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-[200px] p-0">
+                    <PopoverContent className="w-[150px] p-0">
                         <Command>
                             <CommandInput placeholder="Search course..." className="h-9" />
                             <CommandEmpty>No course found.</CommandEmpty>
@@ -91,23 +91,23 @@ const TotalEarnings = (props) => {
                 </Popover>
 
             </div>
-            <ul className='flex justify-between'>
-                <li>
+            <ul className='flex justify-between my-3'>
+                <li className="text-sm">
                     This month <br />
-                    <span className='font-semibold'>${props.month}</span>
+                    <span className='font-semibold text-[.85rem]'>${props.month}</span>
                 </li>
-                <li>
+                <li className="text-sm">
                     Today <br />
-                    <span className='font-semibold'>${props.day}</span>
+                    <span className='font-semibold text-[.85rem]'>${props.day}</span>
                 </li>
             </ul>
-            <div className='flex gap-10 items-center mt-6'>
-                <span>
+            <div className='flex justify-between items-center mt-6'>
+                <span className="text-sm">
                     Available <br />
                     <span className='font-semibold'>${props.available}</span>
                 </span>
                 <Button variant="teacher">
-                    <FaRupeeSign /><p className="sm:hidden">Withdraw</p>
+                    <FaRupeeSign /><p>Withdraw</p>
                 </Button>
             </div>
         </div>
