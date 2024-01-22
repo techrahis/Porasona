@@ -9,22 +9,15 @@ import AllSales from "@/components/Charts/Sales/AllSales";
 import BestsellingCourse from "@/components/shared/BestsellingCourse";
 import { courses, cardData } from "@/data/bestSelling";
 import WeeklyEnrolled from "@/components/Charts/Students/WeeklyEnrolled";
-
+import MonthlyEnrolled from "@/components/Charts/Students/MonthlyEnrolled";
 const Dashboard = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(
     new Date().toLocaleString("default", { month: "long" })
   );
-
   const [type, setType] = useState("all");
-  const states = {
-    type,
-    setType,
-    currentMonth,
-    setCurrentMonth,
-    currentYear,
-    setCurrentYear,
-  };
+  const [studentType, setStudentType] = useState("weeks");
+
   return (
     <div>
       <Helmet>
@@ -39,7 +32,18 @@ const Dashboard = () => {
             <Card data={cardData} />
           </div>
 
-          <ChartLayout type={type} states={states} heading={"Earning Reports"} isStudent={false}>
+          <ChartLayout
+            salesStates={{
+              type,
+              setType,
+              currentMonth,
+              setCurrentMonth,
+              currentYear,
+              setCurrentYear,
+            }}
+            heading={"Earning Reports"}
+            isStudent={false}
+          >
             {type === "all" ? (
               <AllSales />
             ) : type === "month" ? (
@@ -50,15 +54,25 @@ const Dashboard = () => {
           </ChartLayout>
 
           <div className="mt-4 mb-8">
-            <ChartLayout type={type} states={states} heading={"Students"} isStudent={true}>
-              <WeeklyEnrolled />
+            <ChartLayout
+              heading={"Students"}
+              isStudent={true}
+              studentStates={{ studentType, setStudentType }}
+            >
+              {studentType === "weeks" ? (
+                <WeeklyEnrolled />
+              ) : (
+                <MonthlyEnrolled />
+              )}
             </ChartLayout>
           </div>
         </div>
 
         <div className="w-full my-2">
           <TotalEarnings />
+          <div className="my-6">
           <BestsellingCourse courses={courses} />
+          </div>
         </div>
       </div>
     </div>

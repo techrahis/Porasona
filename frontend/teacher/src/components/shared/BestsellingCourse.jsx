@@ -2,7 +2,9 @@ import React from "react";
 import { FiUser } from "react-icons/fi";
 const BestsellingCourse = ({ courses }) => {
   return (
-    <div className="bg-white my-6 p-4 px-4 rounded-md shadow-lg shadow-indigo-500/20 dark:bg-black overflow-x-auto">
+    <div className="bg-white  p-4 px-4 rounded-md 
+    shadow-[0rem_0rem_1rem] shadow-indigo-500/20
+    dark:shadow-popover dark:bg-black overflow-x-auto">
       <h1 className="font-bold">Best selling course</h1>
       <div className="grid grid-cols-[auto,10rem] border-b border-blue-500 mt-2">
         <p className="text-sm mb-1">All time</p>
@@ -39,7 +41,7 @@ const BestsellingCourse = ({ courses }) => {
             </div>
           </div>
         </div>
-      ))}
+      )).slice(0,4)}
     </div>
   );
 };

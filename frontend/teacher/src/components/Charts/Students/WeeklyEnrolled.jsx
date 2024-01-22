@@ -7,7 +7,7 @@ const WeeklyEnrolled = () => {
   return (
     <ResponsiveLine
       data={weeklyData}
-      margin={{ top: 20, right: 40, bottom: 50, left: isMobile ? 40 : 60 }}
+      margin={{ top: 20, right: 40, bottom: 50, left: mobilePhone ? 40 : 60 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -47,7 +47,7 @@ const WeeklyEnrolled = () => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: !isMobile && "Date",
+        legend: !mobilePhone && "Date",
         legendOffset: 36,
         legendPosition: "middle",
       }}
@@ -55,7 +55,7 @@ const WeeklyEnrolled = () => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: !isMobile && "Enrolled",
+        legend: !mobilePhone && "Enrolled",
         legendOffset: -40,
         legendPosition: "middle",
       }}
