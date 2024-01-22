@@ -3,6 +3,7 @@ import { IoIosTrendingUp } from "react-icons/io";
 import webdev from '@/assets/webdev.png';
 import java from '@/assets/java.png';
 import photoshop from '@/assets/photoshop.png'
+import python from '@/assets/python.png'
 export const courses = [
   {
     id:1,
@@ -30,12 +31,29 @@ export const courses = [
     totalSales: "500",
     enrollStudents: "200",
   },
+
+  {
+    id:4,
+    image: python,
+    courseName: "Python",
+    published: "1.5 months",
+    totalSales: "1200",
+    enrollStudents: "400",
+  },
 ];
 
 export const cardData = {
-  number: "5000",
-  month: "100",
+  number: "$5000",
+  month: "$100",
   total: "total enrollments",
   icon1: AiOutlineDollar,
   icon2: IoIosTrendingUp,
 };
+
+export const cardData2={
+  number: "15000",
+  month: "769",
+  total: "total visitors",
+  icon1: AiOutlineDollar,
+  icon2: IoIosTrendingUp,
+}

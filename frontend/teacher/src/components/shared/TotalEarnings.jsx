@@ -44,7 +44,8 @@ const TotalEarnings = (props) => {
     const [value, setValue] = React.useState("");
 
     return (
-        <div className='shadow-lg shadow-indigo-500/20 p-4 rounded-md w-full bg-white dark:bg-black'>
+        <div className='shadow-[0rem_0rem_1rem] shadow-indigo-500/20
+        dark:shadow-popover p-4 rounded-md w-full bg-white dark:bg-black'>
             <div className='flex items-center justify-between gap-x-8'>
                 <h3 className='text-base font-bold'>Your Total Earnings</h3>
                 {/* dropdown */}
